@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ကိုရေ ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6, #e6d7ff);
+}
+
+.card {
+    width: 88%;
+    max-width: 420px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 30px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+.big-heart {
+    font-size: 75px;
+    animation: beat 1.2s infinite;
+}
+
+h1 {
+    color: #e91e63;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.message {
+    color: #555;
+    font-size: 18px;
+    line-height: 2;
+}
+
+button {
+    margin-top: 20px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 25px;
+    background: #e91e63;
+    color: white;
+    font-size: 17px;
+}
+
+#secret {
+    display: none;
+    margin-top: 20px;
+    color: #d81b60;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    animation: floatUp 6s linear forwards;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="big-heart">💗</div>
+
+    <h1>ကိုရေ ❤️</h1>
+
+    <div class="message">
+        ချစ်တုံးလွမ်းနေပြီနော် 🥺💕<br>
+        ကိုနဲ့ စကားပြောချင်နေပြီ။<br>
+        ကို့ကိုလည်း တွေ့ချင်နေပြီ 🥹💗<br>
+        အခုလိုင်းတက်လာရင် ကောင်းမယ်နော်။<br><br>
+
+        ကိုရေ...<br>
+        ချစ်တုံးက ဒီမှာစောင့်နေတယ်နော် 🌷<br>
+        မြန်မြန်လိုင်းတက်လာခဲ့ပါနော် ❤️
+    </div>
+
+    <button onclick="showMessage()">
+        နှိပ်ကြည့်ပါ 💌
+    </button>
+
+    <div id="secret">
+        ကို့ကို အရမ်းလွမ်းနေတယ်နော် 🥺💗<br>
+        မြန်မြန်လာခဲ့ပါ ❤️
+    </div>
+
+</div>
+
+<script>
+
+function showMessage() {
+    document.getElementById("secret").style.display = "block";
+}
+
+function createHeart() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        ["❤️", "💕", "💗", "💖", "🌸"][Math.floor(Math.random() * 5)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 700);
+
+</script>
+
+</body>
+</html>
